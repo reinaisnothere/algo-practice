@@ -7,6 +7,8 @@ def convertFlatIndexToPositionInMatrix(flatIndex, numColumns):
 
 class Solution(object):
   def searchMatrix(self, matrix, target):
+    if len(matrix) == 0:
+      return False
     numColumns = len(matrix[0])
     flatLength = len(matrix) * len(matrix[0])
     highFlatIndex = flatLength
