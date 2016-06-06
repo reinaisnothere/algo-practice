@@ -31,6 +31,9 @@ var test = function() {
     var a = [3, 2, 3, 2, 4, 4, 3];
     var b = solution(a);
     console.log(b === 5);
+    var c = [2, 3, 4, 1, 2, 5, 6, 5, 5];
+    var d = solution(c);
+    console.log(d === 4);
 };
 
 test();
