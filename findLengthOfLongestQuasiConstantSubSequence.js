@@ -9,8 +9,10 @@ function solution(A) {
     for (var i = 1; i < copy.length; i++) {
         if (copy[i] === smallestInt) {
             currentLowRunLength++;
+            longestRunLength = Math.max(currentLowRunLength + currentHighRunLength, longestRunLength); 
         } else if (copy[i] - smallestInt === 1) {
             currentHighRunLength++;
+            longestRunLength = Math.max(currentLowRunLength + currentHighRunLength, longestRunLength);
         } else {
             longestRunLength = Math.max(currentLowRunLength + currentHighRunLength, longestRunLength);
             if (copy[i] - smallestInt === 2 && currentHighRunLength) {
