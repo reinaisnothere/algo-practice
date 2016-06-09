@@ -7,10 +7,15 @@ var throttle = function(func, wait, immediate) {
     args = arguments;
     context = this;
     if (!needsToWait) {
-      result = func.apply(this, arugments);
+      if (immediate) {
+        result = func.apply(context, args);
+      }
       needsToWait = true;
       setTimeout(function() {
         needsToWait = false;
+        if (!immediate) {
+          result = func.apply(context, args);
+        }
       }, wait);
     }
     return result;
