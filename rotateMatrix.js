@@ -10,6 +10,8 @@ function rotateMatrix(matrix) {
 }
 
 function testRotateMatrix() {
+  var matrix0 = [];
+  assert.deepEqual(rotateMatrix(matrix0), []);
   var matrix1 = [
     [1, 2, 3], 
     [4, 5, 6]
